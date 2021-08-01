@@ -50,7 +50,8 @@ def process_song_data(spark, input_data, output_data):
     Raises:
     """
     # get filepath to song data file
-    # NOTE: restrict the part of files (song_data/A/A/A/) due to long processing time
+    # NOTE: restrict the part of files (song_data/A/A/A/)
+    # due to long processing time
     song_data = os.path.join(input_data, "song_data/A/A/A/*.json")
 
     # read song data file
