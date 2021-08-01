@@ -50,7 +50,8 @@ def process_song_data(spark, input_data, output_data):
     Raises:
     """
     # get filepath to song data file
-    song_data = os.path.join(input_data, "song_data/*/*/*/*.json")
+    # NOTE: restrict the part of files (song_data/A/A/A/) due to long processing time
+    song_data = os.path.join(input_data, "song_data/A/A/A/*.json")
 
     # read song data file
     df = spark.read.json(song_data)
@@ -110,8 +111,6 @@ def process_log_data(spark, input_data, output_data):
         "ts",
         "userId",
         "level",
-        "song_id",
-        "artist_id",
         "sessionId",
         "location",
         "userAgent",
